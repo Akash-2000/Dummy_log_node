@@ -52,9 +52,7 @@ app.post("/add",async(req,res)=>{
     const{age,gender,date_of_birth,mobile}=req.body
     console.log(email)
     await User.findOne({email}).then(doc => {doc.details={age:age,gender:gender,date_of_birth:date_of_birth,mobile:mobile},doc.save()})
-    const user = await User.findOne({email}).lean()
-    res.json(user)
-    
+        
 })
 
 Port=5000
